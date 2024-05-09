@@ -13,3 +13,9 @@ For more details please refer to the comments in the source code.
 Use the following command to run the unit tests
 
 `python -m unittest`
+
+
+## Performance tests
+Use the following command to run the performance tests
+
+`python -m unittest tests.test_performance -v`
