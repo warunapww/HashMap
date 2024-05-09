@@ -8,7 +8,7 @@ class TestHashMap(unittest.TestCase):
   def test_create(self):
     map = HashMap()
     self.assertIsNotNone(map)
-    self.assertEqual(map.size, 30)
+    self.assertEqual(map.capacity, 30)
 
   def test_insert(self):
     map = HashMap()
@@ -48,7 +48,7 @@ class TestHashMap(unittest.TestCase):
   def test_hash(self):
     map = HashMap()
     index = map._hash("test1")
-    self.assertTrue(index < map.size and index >= 0)
+    self.assertTrue(index < map.capacity and index >= 0)
 
   def test_same_index(self):
     """

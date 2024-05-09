@@ -1,11 +1,11 @@
 class HashMap:
   """HashMap with separate chaining
   """
-  def __init__(self, size: int = 30):
-    """Initializes the hashmap with `size` number of buckets
+  def __init__(self, capacity: int = 30):
+    """Initializes the hashmap with `capacity` number of buckets
     """
-    self.size = size
-    self._map = [[] for _ in range(self.size)]
+    self.capacity = capacity
+    self._map = [[] for _ in range(self.capacity)]
 
   def get(self, key: str) -> int | None:
     """Returns the `value` corresponds to the provided `key`, 
@@ -48,5 +48,5 @@ class HashMap:
   def _hash(self, key: str) -> int:
     """Compute the hash of the provided `key`. 
     """
-    return hash(key) % self.size
+    return hash(key) % self.capacity
 

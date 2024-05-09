@@ -22,9 +22,9 @@ class PerfTests(unittest.TestCase):
 
     for _ in range(count):
       map = HashMap()
-      keys = generate_strings.strings_with_same_hash(map.size, map._hash)
+      keys = generate_strings.strings_with_same_hash(map.capacity, map._hash)
 
-      #shuffled_keys = [keys[map.size-1]] * map.size
+      #shuffled_keys = [keys[map.capacity-1]] * map.capacity
       shuffled_keys = random.shuffle(keys)
 
       #start_time = time.perf_counter()
@@ -78,7 +78,7 @@ class PerfTests(unittest.TestCase):
 
     for _ in range(count):
       map = HashMap()
-      keys = generate_strings.strings_with_unique_hash(map.size, map._hash)
+      keys = generate_strings.strings_with_unique_hash(map.capacity, map._hash)
 
       shuffled_keys = random.shuffle(keys)
 
