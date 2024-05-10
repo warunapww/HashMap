@@ -27,11 +27,12 @@ def strings_with_same_hash(count: int, hash_function) -> List[str]:
   # while the number of strings in atleast one list is less than 
   # the required number of strings, we keep on adding new strings
   while _get_max(strLists) < count:
-    s = _random_word(random.randint(10, 30))
+    s = _random_word(random.randint(5, 5))
     strLists[hash_function(s)].append(s)
 
   for i in range(0, count):
     if len(strLists[i]) >= count:
+      #print("index: {0}".format(i))
       return strLists[i]
 
 def strings_with_unique_hash(count: int, hash_function) -> List[str]:
@@ -43,8 +44,10 @@ def strings_with_unique_hash(count: int, hash_function) -> List[str]:
   # while the number of strings in atleast one list is less than
   # the required number of strings, we keep on adding new strings
   while None in strList:
-    s = _random_word(random.randint(10, 30))
+    s = _random_word(random.randint(5, 5))
     strList[hash_function(s)] = s
+
+  #print(strList)
 
   return strList
 

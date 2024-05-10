@@ -47,7 +47,7 @@ class TestHashMap(unittest.TestCase):
 
   def test_hash(self):
     map = HashMap()
-    index = map._hash("test1")
+    index = map._hash("test1", 0)
     self.assertTrue(index < map.capacity and index >= 0)
 
 if __name__ == '__main__':
