@@ -1,9 +1,9 @@
 # HashMap
 HashMap implementation in Python
 
-The implementation is based on HashMap with separate chaining
+The implementation is based on HashMap with cuckoo hashing
 
-The HashMap constructor takes the number of buckets as an input. 
+The HashMap constructor takes the capacity and the load_factor as an input. 
 For more details please refer to the comments in the source code.
 
 `hashmap.py` file contains the implementation of the HashMap.  
@@ -12,7 +12,7 @@ For more details please refer to the comments in the source code.
 ## Unit tests
 Use the following command to run the unit tests
 
-`python -m unittest`
+`python -m unittest tests.test_hashmap -v`
 
 
 ## Performance tests
