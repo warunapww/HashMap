@@ -24,30 +24,23 @@ class PerfTests(unittest.TestCase):
       map = HashMap()
       keys = generate_strings.strings_with_same_hash(map.capacity, map._hash)
 
-      ##print(keys)
-
-      #shuffled_keys = [keys[map.capacity-1]] * map.capacity
       shuffled_keys = keys.copy()
       random.shuffle(shuffled_keys)
 
-      #print(keys)
-
-      #start_time = time.perf_counter()
-      start_time = time.process_time()
+      start_time = time.perf_counter()
       # Insert keys
       for i, key in enumerate(keys):
         map.set(key, i)
 
-      #print(map._map)
-
-      end_time = time.process_time()
-      #end_time = time.perf_counter()
+      #end_time = time.process_time()
+      end_time = time.perf_counter()
 
       # Read value of the keys in random order
       for i, key in enumerate(keys):
         val = map.get(key)
 
-      get_end_time = time.process_time()
+      get_end_time = time.perf_counter()
+      #get_end_time = time.process_time()
 
       del map
 
@@ -60,9 +53,6 @@ class PerfTests(unittest.TestCase):
       get_min_time = min(get_min_time, get_elapsed_time)
       get_max_time = max(get_max_time, get_elapsed_time)
 
-      #print('Elapsed time: %.6f %e' % (set_elapsed_time, set_elapsed_time))
-
-    #print(map._map)
 
     set_avg_time = set_total_time/count
     get_avg_time = get_total_time/count
@@ -86,27 +76,25 @@ class PerfTests(unittest.TestCase):
     for _ in range(count):
       map = HashMap()
       keys = generate_strings.strings_with_unique_hash(map.capacity, map._hash)
-      #print(keys)
+      
       shuffled_keys = keys.copy()
       random.shuffle(shuffled_keys)
-      #print(keys)
 
-      #start_time = time.perf_counter()
-      start_time = time.process_time()
+      start_time = time.perf_counter()
+      #start_time = time.process_time()
       # Insert keys
       for i, key in enumerate(keys):
         map.set(key, i)
 
-      #print(map._map)
-
-      end_time = time.process_time()
-      #end_time = time.perf_counter()
+      #end_time = time.process_time()
+      end_time = time.perf_counter()
 
       # Read value of the keys in random order
       for i, key in enumerate(keys):
         val = map.get(key)
 
-      get_end_time = time.process_time()
+      get_end_time = time.perf_counter()
+      #get_end_time = time.process_time()
 
       del map
 
@@ -118,10 +106,6 @@ class PerfTests(unittest.TestCase):
       get_total_time += get_elapsed_time
       get_min_time = min(get_min_time, get_elapsed_time)
       get_max_time = max(get_max_time, get_elapsed_time)
-
-      #print('Elapsed time: %.6f %e' % (set_elapsed_time, set_elapsed_time))
-
-    #print(map._map)
 
     set_avg_time = set_total_time/count
     get_avg_time = get_total_time/count
